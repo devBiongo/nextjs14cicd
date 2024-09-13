@@ -25,6 +25,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.11",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "postcss": "^8",
@@ -34,11 +35,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-stated"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint && npm run format"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "src/**/*.{ts,tsx,js,jsx}": [
       "npm run lint",
       "npm run format"
     ]
