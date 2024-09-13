@@ -1,0 +1,2 @@
+echo "开始检查代码~~~~~~~~~~~~~"
+npx lint-staged
