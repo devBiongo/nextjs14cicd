@@ -11,3 +11,4 @@ npm install -D prettier eslint-config-prettier
 }
 },
 
+docker run -d -p 8443:443 -p 8080:80 -p 8022:22 --restart always --name gitlab -v /data/docker/gitlab/etc:/etc/gitlab -v /data/docker/gitlab/log:/var/log/gitlab -v /data/docker/gitlab/data:/var/opt/gitlab --privileged=true gitlab/gitlab-ce
