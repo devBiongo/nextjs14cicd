@@ -61,7 +61,7 @@ jobs:
       #   run: npm install
       # # 构建
       # - name: build
-      #   run: npm run build
+      #   run: npm run build1
       # 移除历史镜像
       - name: remove docker image and container
         run: |
