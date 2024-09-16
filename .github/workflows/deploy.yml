@@ -51,17 +51,11 @@ jobs:
       # 检出代码
       - name: checkout
         uses: actions/checkout@v3
-      # 安装nodejs 20
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.9
-      # 安装依赖
-      - name: install dependencies
-        run: npm install
-      # 构建
-      - name: build
-        run: npm run build
+      # 运行 Node.js 脚本，环境变量将自动注入
+      - name: Run Node.js script
+        run: node ./scripts/env.js
+        env:
+          APP_DATABASE_URL: ${{ secrets.APP_DATABASE_URL }}
       # 移除历史镜像
       - name: remove docker image and container
         run: |
