@@ -48,9 +48,9 @@ jobs:
         run: |
           docker context create remote --docker "host=ssh://$SSH_USERNAME@$SSH_HOST"
           docker context use remote
-      # # 检出代码
-      # - name: checkout
-      #   uses: actions/checkout@v3
+      # 检出代码
+      - name: checkout
+        uses: actions/checkout@v3
       # 安装nodejs 20
       - name: setup node
         uses: actions/setup-node@v3
@@ -61,7 +61,7 @@ jobs:
         run: npm install
       # 构建
       - name: build
-        run: npm run build1
+        run: npm run build
       # 移除历史镜像
       - name: remove docker image and container
         run: |
